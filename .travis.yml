@@ -1,0 +1,13 @@
+git:
+  autocrlf: false
+
+matrix:
+  include:
+    - name: "Ubuntu 18.04 (Bionic Beaver)"
+      os: linux
+      dist: bionic
+    - name: "OSX 10.15 (Catalina)"
+      os: osx
+      osx_image: xcode12.2
+
+script: ./test.sh

@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ trunk ]
+  pull_request:
+    branches: [ trunk ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        include:
+          - name: Ubuntu 18.04 (Bionic Beaver)
+            os: ubuntu-18.04
+          - name: macOS 10.15 (Catalina)
+            os: macos-10.15
+          - name: CentOS 8
+            os: ubuntu-18.04
+            container: centos:8
+    name: ${{matrix.name || matrix.os || 'Tests' }}
+    runs-on: ${{matrix.os}}
+    container: ${{matrix.container}}
+    steps:
+    - uses: actions/checkout@v2
+    - run: ./test.sh
+   
