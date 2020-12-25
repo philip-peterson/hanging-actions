@@ -18,5 +18,11 @@ echo
 echo "Test:"
 echo "-----"
 echo "How many times does this run?"
-yes | head -n 7
+#yes | head -n 7
+seq | while read i; do
+  echo $i;
+  if [ $i -gt 7 ]; then
+    break;
+  fi
+done
 echo "Great, I see you're finished."
