@@ -31,7 +31,7 @@ echo "Test:"
 echo "-----"
 echo "How many times does this run?"
 #yes | head -n 7
-count | while read i; do
+seq 99999999999999999 | while read i; do
   echo $i;
   if [ $i -gt 7 ]; then
     break;
