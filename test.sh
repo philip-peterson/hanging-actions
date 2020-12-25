@@ -8,6 +8,7 @@ exec 2>&1       # Actions seems to not be great about syncronizing the output fr
 # generate an infinite list (cribbed from https://docs.python.org/3/library/itertools.html#itertools.count)
 count() {
   set +x
+  set -e # quit on error; important for e.g. quitting when stdout is closed
   i=0
   while true; do
     i=$(($i + 1))
