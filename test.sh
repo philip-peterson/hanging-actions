@@ -9,6 +9,7 @@ exec 2>&1       # Actions seems to not be great about syncronizing the output fr
 count() {
   set +x
   set -e # quit on error; important for e.g. quitting when stdout is closed
+  
   i=0
   while true; do
     i=$(($i + 1))
