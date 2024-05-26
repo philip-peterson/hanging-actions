@@ -2,6 +2,7 @@ name: CI
 
 env:
   ACTIONS_RUNNER_DEBUG: "true"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: "true"
   ACTIONS_STEP_DEBUG: "true"
 
 on:
